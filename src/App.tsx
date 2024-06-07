@@ -5,6 +5,7 @@ import "./index.css";
 import UploadArea from "./components/uploadArea";
 import { DuplicateImage } from "./Types/type";
 import UpladedImagesArea from "./components/uploadedImagesArea";
+import LoadingComponent from "./components/loading";
 
 const App: React.FC = () => {
 	const [files, setFiles] = useState<FileList | null>(null);
@@ -47,6 +48,7 @@ const App: React.FC = () => {
 
 	return (
 		<div>
+			{loading && <LoadingComponent />}
 			<Header />
 			<UploadArea
 				handleUpload={handleUpload}
