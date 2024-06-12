@@ -12,7 +12,21 @@ import {
 const UploadArea = ({ handleUpload, loading, setFiles, setDuplicates }: UploadArePageProps) => {
 	const [previewImages, setPreviewImages] = useState<string[]>([]);
 
+		const handleClear = () => {
+		setFiles(null); // Dosyaları temizle
+		setPreviewImages([]); // Önizlemeleri temizle
+		setDuplicates([]); // Yinelemeleri temizle
+		const fileInput = document.getElementById("fileUpload") as HTMLInputElement;
+		if (fileInput) {
+			fileInput.value = ""; // Dosya seçici'nin değerini sıfırla
+		}
+	};
+
 	const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setPreviewImages([]); // Önizlemeleri temizle
+		setFiles(null); // Dosyaları temizle
+		setDuplicates([]); // Yinelemeleri temizle
+		
 		setFiles(event.target.files);
 		if (event.target.files) {
 			Array.from(event.target.files).forEach((file) => {
@@ -25,15 +39,7 @@ const UploadArea = ({ handleUpload, loading, setFiles, setDuplicates }: UploadAr
 		}
 	};
 
-	const handleClear = () => {
-		setFiles(null); // Dosyaları temizle
-		setPreviewImages([]); // Önizlemeleri temizle
-		setDuplicates([]); // Yinelemeleri temizle
-		const fileInput = document.getElementById("fileUpload") as HTMLInputElement;
-		if (fileInput) {
-			fileInput.value = ""; // Dosya seçici'nin değerini sıfırla
-		}
-	};
+
 	return (
 		<UploadAreaContainer>
 			<StyledUploadInput id="fileUpload" multiple accept=".svg" onChange={handleFileChange} />

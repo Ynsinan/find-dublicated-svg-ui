@@ -6,6 +6,7 @@ import UploadArea from "./components/uploadArea";
 import { DuplicateImage } from "./Types/type";
 import UpladedImagesArea from "./components/uploadedImagesArea";
 import LoadingComponent from "./components/loading";
+import SocialMediaButton from "./components/contact";
 
 const App: React.FC = () => {
 	const [files, setFiles] = useState<FileList | null>(null);
@@ -59,6 +60,7 @@ const App: React.FC = () => {
 			/>
 			{error && <p style={{ color: "red" }}>{error}</p>}
 			{duplicates.length > 0 && <UpladedImagesArea duplicates={duplicates} />}
+			<SocialMediaButton />
 		</div>
 	);
 };
