@@ -33,7 +33,7 @@ const App: React.FC = () => {
 		}
 
 		try {
-			const response = await axios.post("https://3.8.140.145:5000/upload", formData, {
+			const response = await axios.post("http://3.8.140.145:5000/upload", formData, {
 				headers: {
 					"Content-Type": "multipart/form-data",
 				},
