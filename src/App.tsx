@@ -48,11 +48,15 @@ const App: React.FC = () => {
 		}
 
 		try {
-			const response = await axios.post<ApiResponse>("https://find-dublicated-svg-api-production.up.railway.app/upload", formData, {
-				headers: {
-					"Content-Type": "multipart/form-data",
+			const response = await axios.post<ApiResponse>(
+				"https://find-dublicated-svg-api-production.up.railway.app/upload",
+				formData,
+				{
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
 				},
-			});
+			);
 
 			if (response.data.isSuccess) {
 				const successData = response.data as SuccessResponse;
@@ -61,7 +65,7 @@ const App: React.FC = () => {
 				setPerformanceData({
 					totalFiles: successData.performance.totalFiles,
 					totalDuplicates: successData.totalDuplicates,
-					returnedCount: successData.returnedCount
+					returnedCount: successData.returnedCount,
 				});
 			} else {
 				setError(response.data.error);
@@ -91,9 +95,9 @@ const App: React.FC = () => {
 			<SocialMediaButton />
 			<AppContainer>
 				{loading && <Loading />}
-				
+
 				<Header />
-				
+
 				<MainContent>
 					<Container>
 						<UploadArea
@@ -115,19 +119,23 @@ const App: React.FC = () => {
 								{successMessage}
 								{performanceData && (
 									<div style={{ marginTop: "12px" }}>
-										<p>📁 Total files processed: <strong>{performanceData.totalFiles}</strong></p>
-										<p>🔍 Duplicate pairs found: <strong>{performanceData.totalDuplicates}</strong></p>
+										<p>
+											📁 Total files processed: <strong>{performanceData.totalFiles}</strong>
+										</p>
+										<p>
+											🔍 Duplicate pairs found: <strong>{performanceData.totalDuplicates}</strong>
+										</p>
 										{performanceData.returnedCount > 0 && (
-											<p>📋 Results shown: <strong>{performanceData.returnedCount}</strong></p>
+											<p>
+												📋 Results shown: <strong>{performanceData.returnedCount}</strong>
+											</p>
 										)}
 									</div>
 								)}
 							</Alert>
 						)}
 
-						{duplicates.length > 0 && (
-							<DuplicateResults duplicates={duplicates} />
-						)}
+						{duplicates.length > 0 && <DuplicateResults duplicates={duplicates} />}
 					</Container>
 				</MainContent>
 

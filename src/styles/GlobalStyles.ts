@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { Theme } from './theme';
+import { createGlobalStyle } from "styled-components";
+import { Theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   }
 
   body {
-    font-family: ${({ theme }) => theme.typography.fontFamily.sans.join(', ')};
+    font-family: ${({ theme }) => theme.typography.fontFamily.sans.join(", ")};
     font-size: ${({ theme }) => theme.typography.fontSize.base};
     font-weight: ${({ theme }) => theme.typography.fontWeight.normal};
     line-height: ${({ theme }) => theme.typography.lineHeight.normal};
@@ -85,4 +85,4 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
       background: ${({ theme }) => theme.colors.gray[400]};
     }
   }
-`; 
+`;

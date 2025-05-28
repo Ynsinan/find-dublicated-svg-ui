@@ -43,10 +43,7 @@ const SocialMediaButton: React.FC = () => {
 			>
 				<FcContacts size={50} />
 			</Button>
-			<LinksContainer
-				isExpandedContainer={isExpanded}
-				style={{ display: isExpanded ? "block" : "none" }}
-			>
+			<LinksContainer isExpandedContainer={isExpanded} style={{ display: isExpanded ? "block" : "none" }}>
 				<SocialMediaLink href="https://x.com/yns_ngga" target="_blank">
 					<RiTwitterXFill size={30} />
 				</SocialMediaLink>

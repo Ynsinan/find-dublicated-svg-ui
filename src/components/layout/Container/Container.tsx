@@ -1,10 +1,10 @@
-import React from 'react';
-import { StyledContainer, ContainerProps } from './Container.styles';
+import React from "react";
+import { StyledContainer, ContainerProps } from "./Container.styles";
 
 interface Props extends ContainerProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 export const Container: React.FC<Props> = ({ children, ...props }) => {
-  return <StyledContainer {...props}>{children}</StyledContainer>;
-}; 
+	return <StyledContainer {...props}>{children}</StyledContainer>;
+};
