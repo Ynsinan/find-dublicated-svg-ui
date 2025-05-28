@@ -48,7 +48,7 @@ const App: React.FC = () => {
 		}
 
 		try {
-			const response = await axios.post<ApiResponse>("http://192.168.1.103:5000/upload", formData, {
+			const response = await axios.post<ApiResponse>("https://find-dublicated-svg-api-production.up.railway.app/upload", formData, {
 				headers: {
 					"Content-Type": "multipart/form-data",
 				},
