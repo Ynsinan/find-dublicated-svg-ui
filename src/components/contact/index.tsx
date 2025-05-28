@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { Button, LinksContainer, SocialMediaLink } from "./style";
 import { FcContacts } from "react-icons/fc";
 import { VscGithub } from "react-icons/vsc";

@@ -16,3 +16,26 @@ export interface DuplicateImage {
 export type UploadAreaProps = {
 	duplicates: DuplicateImage[];
 };
+
+// API Response Types
+export interface PerformanceData {
+	totalFiles: number;
+	maxFilesAllowed: number;
+	timeoutSeconds: number;
+}
+
+export interface SuccessResponse {
+	isSuccess: true;
+	message: string;
+	data: DuplicateImage[];
+	totalDuplicates: number;
+	returnedCount: number;
+	performance: PerformanceData;
+}
+
+export interface ErrorResponse {
+	isSuccess: false;
+	error: string;
+}
+
+export type ApiResponse = SuccessResponse | ErrorResponse;
