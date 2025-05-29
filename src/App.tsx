@@ -107,13 +107,11 @@ const App: React.FC = () => {
 							onClear={handleClear}
 							loading={loading}
 						/>
-
 						{error && (
 							<Alert variant="error" title="Error">
 								{error}
 							</Alert>
 						)}
-
 						{successMessage && (
 							<Alert variant="success" title="Success">
 								{successMessage}
@@ -134,11 +132,9 @@ const App: React.FC = () => {
 								)}
 							</Alert>
 						)}
-
 						{duplicates.length > 0 && <DuplicateResults duplicates={duplicates} />}
 					</Container>
 				</MainContent>
-
 				<Footer />
 			</AppContainer>
 		</ThemeProvider>
